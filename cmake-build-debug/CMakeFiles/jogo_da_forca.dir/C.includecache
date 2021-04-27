@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+K:/Kinho/Programacao/C/jogo-da-forca/main.c
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+string.h
+-
+pilha.h
+K:/Kinho/Programacao/C/jogo-da-forca/pilha.h
+
+K:/Kinho/Programacao/C/jogo-da-forca/pilha.h
+stdio.h
+-
+
