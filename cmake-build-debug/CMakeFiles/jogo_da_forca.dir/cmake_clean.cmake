@@ -1,9 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/jogo_da_forca.dir/main.c.obj"
-  "jogo_da_forca.exe"
-  "jogo_da_forca.exe.manifest"
+  "CMakeFiles/jogo_da_forca.dir/main.c.o"
+  "jogo_da_forca"
   "jogo_da_forca.pdb"
-  "libjogo_da_forca.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

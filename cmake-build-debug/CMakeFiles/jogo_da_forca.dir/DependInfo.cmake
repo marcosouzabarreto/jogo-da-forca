@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "K:/Kinho/Programacao/C/jogo-da-forca/main.c" "K:/Kinho/Programacao/C/jogo-da-forca/cmake-build-debug/CMakeFiles/jogo_da_forca.dir/main.c.obj"
+  "/home/marco/Documentos/Programming/C/jogo-da-forca/main.c" "/home/marco/Documentos/Programming/C/jogo-da-forca/cmake-build-debug/CMakeFiles/jogo_da_forca.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
