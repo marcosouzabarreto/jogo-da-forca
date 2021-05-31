@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="jogo_da_forca" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="jogo_da_forca" TARGET_NAME="jogo_da_forca" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="jogo_da_forca" RUN_TARGET_NAME="jogo_da_forca">
+    <method v="2">
+      <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+    </method>
+  </configuration>
+</component>

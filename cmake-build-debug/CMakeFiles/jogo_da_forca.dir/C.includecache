@@ -6,19 +6,33 @@
 
 #IncludeRegexTransform: 
 
-/home/marco/Documentos/Programming/C/jogo-da-forca/main.c
+K:/Kinho/Programacao/C/jogo-da-forca/jogo-da-forca/listase.h
+stdio.h
+-
+stdlib.h
+-
+
+K:/Kinho/Programacao/C/jogo-da-forca/jogo-da-forca/main.c
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+stdbool.h
+-
+listase.h
+K:/Kinho/Programacao/C/jogo-da-forca/jogo-da-forca/listase.h
+utils.h
+K:/Kinho/Programacao/C/jogo-da-forca/jogo-da-forca/utils.h
+
+K:/Kinho/Programacao/C/jogo-da-forca/jogo-da-forca/utils.h
+windows.h
+-
 stdio.h
 -
 stdlib.h
 -
 stdbool.h
--
-string.h
--
-pilha.h
-/home/marco/Documentos/Programming/C/jogo-da-forca/pilha.h
-
-/home/marco/Documentos/Programming/C/jogo-da-forca/pilha.h
-stdio.h
 -
 
