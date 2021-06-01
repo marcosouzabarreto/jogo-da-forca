@@ -7,8 +7,8 @@
 
  */
 
-#ifndef MAIN_C_UTILS_H
-#define MAIN_C_UTILS_H
+#ifndef MAIN_C_MARCO_H
+#define MAIN_C_MARCO_H
 
 #include <windows.h>
 #include <stdio.h>
