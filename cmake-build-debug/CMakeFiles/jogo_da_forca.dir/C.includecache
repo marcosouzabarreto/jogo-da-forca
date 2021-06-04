@@ -6,6 +6,14 @@
 
 #IncludeRegexTransform: 
 
+K:/Kinho/Programacao/C/jogo-da-forca/jogo-da-forca/desenhaboneco.h
+marco.h
+K:/Kinho/Programacao/C/jogo-da-forca/jogo-da-forca/marco.h
+stdio.h
+-
+stdlib.h
+-
+
 K:/Kinho/Programacao/C/jogo-da-forca/jogo-da-forca/listase.h
 stdio.h
 -
@@ -21,12 +29,16 @@ string.h
 -
 stdbool.h
 -
+conio.h
+-
 listase.h
 K:/Kinho/Programacao/C/jogo-da-forca/jogo-da-forca/listase.h
-utils.h
-K:/Kinho/Programacao/C/jogo-da-forca/jogo-da-forca/utils.h
+marco.h
+K:/Kinho/Programacao/C/jogo-da-forca/jogo-da-forca/marco.h
+desenhaboneco.h
+K:/Kinho/Programacao/C/jogo-da-forca/jogo-da-forca/desenhaboneco.h
 
-K:/Kinho/Programacao/C/jogo-da-forca/jogo-da-forca/utils.h
+K:/Kinho/Programacao/C/jogo-da-forca/jogo-da-forca/marco.h
 windows.h
 -
 stdio.h

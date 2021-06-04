@@ -2,8 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#include <conio.h>
 #include "listase.h"
 #include "marco.h"
+#include "desenhaboneco.h"
 
 //Definicao de cores
 #define RED   "\x1B[31m"
@@ -40,137 +42,31 @@ void pegaPalavra(char *palavra) {
     fflush(stdin); // Limpando o buffer
 } // Comentada!
 
-int comparaListas(tp_listase *l1, tp_listase *l2){
-    tp_listase *atu;
-    tp_listase *atu2;
-    atu = l1;
-    atu2 = l2;
+void pegaLetra(char *palavra) {
     /*
-     * Enquanto as listas não estiverem vazias
-     * compara a info do nó de uma com a info do nó de outra
-     * se forem diferentes, retorna 0, senao, continua
-     *
-     * No fim, quando acabar o while, um if verifica se alguma lista é maior que outra
-     * verificando o atu dos 2, se algum dos atus não forem nulos, significa que uma lista é maior
-     * do que a outra
-     *
-     * No fim de tudo, se as pilhas passarem todas as verificacões
-     * significa que são iguais, assim retornando 1
+     * Apenas uma função para pegar uma letra
      */
-    while ((atu != NULL)&&(atu2 != NULL)) {
-        if (atu -> info != atu2 -> info) return 0;
-
-        atu = atu->prox;
-        atu2 = atu2->prox;
-    }
-    if (((atu == NULL)&&(atu2 != NULL)||(atu2==NULL)&&(atu!=NULL))) return 0;
-    return 1;
+    gotoxy(4, 6);
+    fflush(stdin);
+    *palavra = getchar();
+    fflush(stdin);
 } // Comentada!
 
+int comparaListas(char e, tp_listase *l, int *qDeLetras){
+    tp_listase *atu;
+    atu = l;
+    int pos = 1;
+    while ((atu != NULL)&&(atu -> info != e)) {
+        atu = atu->prox;
+        pos++;
+    }
+
+    if (atu == NULL) return 0;
+    return pos;
+}
+
 // Apenas funções de desenho, utilizando o gotoxy
-void desenhaBalaoBoasVindas(){
-    gotoxy(80, 1); printf("  ____________________________");
-    gotoxy(80, 2); printf(" /                            \\");
-    gotoxy(80, 3); printf("/                              \\");
-    gotoxy(80, 4); printf("\\                              /");
-    gotoxy(80, 5); printf(" \\____________________________/");
 
-    gotoxy(83, 3); printf(CYN "Bem vindo ao Jogo da Forca!" RESET);
-}
-void desenhaCabecaErrada(){
-    gotoxy(60, 1);        printf(RED"       ......." RESET);
-    gotoxy(60, 2);        printf(RED"     ...     ..." RESET);
-    gotoxy(60, 3);        printf(RED"    ... X   X ..." RESET);
-    gotoxy(60, 4);        printf(RED"    ...       ..." RESET);
-    gotoxy(60, 5);        printf(RED"     ... XxxX ..." RESET);
-    gotoxy(60, 6);        printf(RED"      ...   ..." RESET);
-    gotoxy(60, 7);        printf(RED"        ...." RESET);
-}
-void desenhaCabeca(){
-    gotoxy(60, 1);        printf("       ......." );
-    gotoxy(60, 2);        printf("     ...     ..." );
-    gotoxy(60, 3);        printf("    ... O   O ..." );
-    gotoxy(60, 4);        printf("    ...       ...");
-    gotoxy(60, 5);        printf("     ...\\___/...");
-    gotoxy(60, 6);        printf("      ...   ...");
-    gotoxy(60, 7);        printf("        ....");
-}
-void desenhaCorpo(){
-    gotoxy(60, 8);        printf(BLU"        ...."RESET);
-    gotoxy(60, 9);        printf(BLU"        ...."RESET);
-    gotoxy(60, 10);       printf(BLU"        ...."RESET);
-    gotoxy(60, 11);       printf(BLU"        ...."RESET);
-    gotoxy(60, 12);       printf(BLU"        ...."RESET);
-    gotoxy(60, 13);       printf(BLU"        ...."RESET);
-}
-void desenhaBracoEsquerdo(){
-    gotoxy(60, 8); printf("       .");
-    gotoxy(60, 9); printf("      ..");
-    gotoxy(60, 10);printf("    ...");
-    gotoxy(60, 11);printf("   ...");
-    gotoxy(60, 12);printf("  ...");
-    gotoxy(60, 13);printf(" ...");
-}
-void desenhaBracoDireito(){
-    gotoxy(72, 8); printf(".");
-    gotoxy(72, 9); printf("..");
-    gotoxy(73, 10);printf("...");
-    gotoxy(74, 11);printf("...");
-    gotoxy(75, 12);printf("...");
-    gotoxy(76, 13);printf("...");
-}
-void desenhaPernas() {
-    gotoxy(60, 14);       printf(YEL"        ...."RESET);
-    gotoxy(60, 15);       printf(YEL"       ......"RESET);
-    gotoxy(60, 16);       printf(YEL"      ...  ..."RESET);
-    gotoxy(60, 17);       printf(YEL"     ...    ..."RESET);
-    gotoxy(60, 18);       printf(YEL"    ...      ..."RESET);
-    gotoxy(60, 19);       printf(YEL"   ...        ..."RESET);
-    gotoxy(60, 20);       printf(YEL"  ...          ..."RESET);
-}
-void desenhaPessoaErrada(){
-    desenhaCabecaErrada();
-    desenhaCorpo();
-    desenhaBracoEsquerdo();
-    desenhaBracoDireito();
-    desenhaPernas();
-}
-void desenhaParabens() {
-
-    gotoxy(4, 5); printf("  _____                           _                            _   _ ");
-    gotoxy(4, 6); printf(" |  __ \\                         | |                          | | | |");
-    gotoxy(4, 7); printf(" | |__) |   __ _   _ __    __ _  | |__     ___   _ __    ___  | | | |");
-    gotoxy(4, 8); printf(" |  ___/   / _` | | '__|  / _` | | '_ \\   / _ \\ | '_ \\  / __| | | | |");
-    gotoxy(4, 9); printf(" | |      | (_| | | |    | (_| | | |_) | |  __/ | | | | \\__ \\ |_| |_|");
-    gotoxy(4, 10); printf(" |_|       \\__,_| |_|     \\__,_| |_.__/   \\___| |_| |_| |___/ (_) (_)");
-
-    gotoxy(4, 12);
-    system("pause");
-    system("cls");
-
-}
-void desenhaPerdeu() {
-    gotoxy(4, 5); printf("  _____                      _                  _   _ ");
-    gotoxy(4, 6); printf(" |  __ \\                    | |                | | | |");
-    gotoxy(4, 7); printf(" | |__) |   ___   _ __    __| |   ___   _   _  | | | |");
-    gotoxy(4, 8); printf(" |  ___/   / _ \\ | '__|  / _` |  / _ \\ | | | | | | | |");
-    gotoxy(4, 9); printf(" | |      |  __/ | |    | (_| | |  __/ | |_| | |_| |_|");
-    gotoxy(4, 10); printf(" |_|       \\___| |_|     \\__,_|  \\___|  \\__,_| (_) (_)");
-
-    desenhaPessoaErrada();
-
-    gotoxy(4, 12);
-    system("pause");
-    system("cls");
-}
-void desenhaPessoa(){
-    desenhaBalaoBoasVindas();
-    desenhaCabeca();
-    desenhaCorpo();
-    desenhaBracoEsquerdo();
-    desenhaBracoDireito();
-    desenhaPernas();
-}
 
 int main() {
     // Inicializar cor
@@ -182,12 +78,25 @@ int main() {
         tp_listase *listaPalavraSecreta = aloca_listase();
 
         //Declaração de variáveis
+
         char palavraSecreta[64]; // Declarar palavra secreta
+        char tentativa;
+        int posDosAcertos[64];
+
+        int i;
+        for (i=0; i<63;i++) {
+            posDosAcertos[i]=0;
+        }
+
         int iguais;
+        int letrasAcertadas = 0;
+        int letrasTotais;
         int op;
         int tentativasTotais = 6;
         int tentativaAtual = 0;
-        int acertou = 0;
+        int ganhou= 0;
+        int j;
+        int qDeLetras=0;
 
         //Escrevendo a frase "Digite 1 para jogar e 0 para sair, utilizando as cores verde e vermelho"
         gotoxy(4,2);
@@ -214,6 +123,7 @@ int main() {
 
             //Pegando palavra e botando na lista
             pegaPalavra(palavraSecreta);
+            letrasTotais = strlen(palavraSecreta);
             palavraNaLista(palavraSecreta, &listaPalavraSecreta);
 
             //Limpando a tela
@@ -222,86 +132,50 @@ int main() {
             //Enquanto a tentativa atual for menor que tentativa total, executa o loop
             while (tentativaAtual < tentativasTotais){
 
-                //Switch para desenhar o boneco de acordo com a tentativa
-                switch (tentativaAtual) {
-                    case 1:
-                        desenhaCabeca();
+                gotoxy(35,4);
+                printf("Tentativa %i de %i", tentativaAtual, tentativasTotais);
+
+                for (j=2;j<strlen(palavraSecreta)+2;j++){
+
+                    if (posDosAcertos[j]==1){
+                        gotoxy(8+2*j,8);
+                        printf("%c", tentativa);
+                        posDosAcertos[j]=2;
+
+                    } else if (posDosAcertos[j]!=2){
+                        gotoxy(8+2*j,8);
+                        printf("_");
+                    }
+                }
+                gotoxy(4, 5);
+                printf("Digite a sua tentativa");
+
+                gotoxy(4, 6);
+                pegaLetra(&tentativa);
+                gotoxy(4, 6);
+                printf(" ");
+                iguais = comparaListas(tentativa, listaPalavraSecreta, &qDeLetras);
+
+
+                if ((iguais!=0)&&(posDosAcertos[iguais])==0){
+                    letrasAcertadas++;
+                    posDosAcertos[iguais]=1;
+                    if (letrasAcertadas == letrasTotais){
+                        system("cls");
+                        desenhaParabens();
+                        ganhou=1;
                         break;
-                    case 2:
-                        desenhaCabeca();
-                        desenhaCorpo();
-                        break;
-                    case 3:
-                        desenhaCabeca();
-                        desenhaCorpo();
-                        desenhaBracoDireito();
-                        break;
-                    case 4:
-                        desenhaCabeca();
-                        desenhaCorpo();
-                        desenhaBracoDireito();
-                        desenhaBracoEsquerdo();
-                        break;
-                    case 5:
-                        desenhaCabeca();
-                        desenhaCorpo();
-                        desenhaBracoDireito();
-                        desenhaBracoEsquerdo();
-                        desenhaPernas();
-                        break;
-                    default:
-                        break;
+                    }
+                }  else {
+                    tentativaAtual++;
                 }
 
-                // Alocando lista de tentativa
-                tp_listase *listaTentativa = aloca_listase();
-
-                char tentativa[64]; // Declarar string da tentativa
-
-                //Pede a tentativa, pega a tentativa e desenha qual a tentativa atual
-                gotoxy(4, 3);
-                printf("Digite a sua tentativa\n");
-                gotoxy(45, 3);
-                printf("Tentativa %i de %i", tentativaAtual+1, tentativasTotais);
-                pegaPalavra(tentativa);
-
-                //Poe a palavra na lista para comparar
-                palavraNaLista(tentativa, &listaTentativa);
-
-                //Compara as listas, se iguais == 1, são iguais, senao, são falsas
-                iguais = comparaListas(listaTentativa, listaPalavraSecreta);
-
-                if (iguais==1) {
-                    //Se forem iguais, põe a variável acertei como 1, ela será usada depois
-                    acertou = 1;
-                    //Sai do loop de tentativas, pois se a pessoa acertou ela não precisa mais adivinhar a palavra
-                    break;
-                } else {
-                    //Se não forem iguais, printa "Palavra incorreta"
-                    gotoxy(4, 7);
-                    printf("Palavra incorreta\n");
-                    gotoxy(4, 8);
-
-                    system("pause");
-                    system("cls");
-                }
-
-                /* Aumenta 1 no contador de tentativa atual e destroi a lista da tentativa
-                 * para poder se criar uma nova
-                 */
-                tentativaAtual++;
-                destroi_listase(&listaTentativa);
             }
-        if (acertou == 0){
-            //Se a pessoa não acertou até o fim das tentativas, desenha perdeu
-            desenhaPerdeu();
-
-        } else {
-            //Se ela acertou, a variável acertou vai ser != 0, assim entrando nesse else
-            //Que limpa a tela e desenha os parabéns
+        if (ganhou==0){
             system("cls");
-            desenhaParabens();
+            desenhaPerdeu();
         }
+
     }
 
 } // Comentada!
