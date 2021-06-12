@@ -17,7 +17,16 @@
 #define WHT   "\x1B[37m"
 #define RESET "\x1B[0m"
 
+void desenhaMeAjuda(){
 
+        gotoxy(80, 1); printf("  ____________________________");
+        gotoxy(80, 2); printf(" /                            \\");
+        gotoxy(80, 3); printf("/                              \\");
+        gotoxy(80, 4); printf("\\                              /");
+        gotoxy(80, 5); printf(" \\____________________________/");
+        gotoxy(83, 3); printf(RED "So mais 1 tentativa!!!" RESET);
+
+}
 void desenhaBalaoBoasVindas(){
     gotoxy(80, 1); printf("  ____________________________");
     gotoxy(80, 2); printf(" /                            \\");

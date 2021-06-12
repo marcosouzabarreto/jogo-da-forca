@@ -169,6 +169,43 @@ int main() {
         //Enquanto a tentativa atual for menor que tentativa total, executa o loop
         while (tentativaAtual <= tentativasTotais) {
 
+            switch (tentativaAtual) {
+                case 1:
+                    desenhaCabeca();
+                    break;
+                case 2:
+                    desenhaCabeca();
+                    desenhaCorpo();
+                    break;
+                case 3:
+                    desenhaCabeca();
+                    desenhaCorpo();
+                    desenhaBracoEsquerdo();
+                    break;
+                case 4:
+                    desenhaCabeca();
+                    desenhaCorpo();
+                    desenhaBracoEsquerdo();
+                    desenhaBracoDireito();
+                    break;
+                case 5:
+                    desenhaCabeca();
+                    desenhaCorpo();
+                    desenhaBracoEsquerdo();
+                    desenhaBracoDireito();
+                    desenhaPernas();
+                    break;
+                case 6:
+                    desenhaCabeca();
+                    desenhaCorpo();
+                    desenhaBracoEsquerdo();
+                    desenhaBracoDireito();
+                    desenhaPernas();
+                    desenhaMeAjuda();
+                    break;
+
+            }
+
             gotoxy(35, 4);
             printf("Tentativa %i de %i", tentativaAtual, tentativasTotais);
 
@@ -193,21 +230,20 @@ int main() {
                 if ((iguais != 0) && (posDosAcertos[iguais]) == 0) {
                     letrasAcertadas++;
                     posDosAcertos[iguais] = 1;
-
                 }
 
                 k++;
                 printaCoisasNaTela(j, palavraSecreta, posDosAcertos, tentativa, tentativaAtual, tentativasTotais);
 
             }
-            if (k<=qDeLetras){
+            if (qDeLetras==0){
 
                 printaCoisasNaTela(j, palavraSecreta, posDosAcertos, tentativa, tentativaAtual, tentativasTotais);
                 gotoxy(35, 4);
                 printf("Tentativa %i de %i", tentativaAtual, tentativasTotais);
 
-
             }
+
             if (rodadaAcertada==0) tentativaAtual++;
 
             if (letrasAcertadas == letrasTotais) {

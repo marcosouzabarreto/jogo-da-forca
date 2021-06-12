@@ -108,6 +108,4 @@ void destroi_listase(tp_listase **l){
     *l=NULL;
 }
 
-
-
 #endif //LISTASE_LIBRARY_H
