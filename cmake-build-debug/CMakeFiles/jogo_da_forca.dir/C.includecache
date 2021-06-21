@@ -29,8 +29,6 @@ string.h
 -
 stdbool.h
 -
-conio.h
--
 listase.h
 K:/Kinho/Programacao/C/jogo-da-forca/jogo-da-forca/listase.h
 marco.h
@@ -46,5 +44,9 @@ stdio.h
 stdlib.h
 -
 stdbool.h
+-
+conio.h
+-
+time.h
 -
 

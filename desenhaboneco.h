@@ -12,11 +12,10 @@
 #define GRN   "\x1B[32m"
 #define YEL   "\x1B[33m"
 #define BLU   "\x1B[34m"
-#define MAG   "\x1B[35m"
 #define CYN   "\x1B[36m"
-#define WHT   "\x1B[37m"
 #define RESET "\x1B[0m"
 
+/*Só desenhos, nada pra olhar aqui*/
 void desenhaMeAjuda(){
 
         gotoxy(80, 1); printf("  ____________________________");
@@ -78,6 +77,7 @@ void desenhaBracoDireito(){
     gotoxy(75, 12);printf("...");
     gotoxy(76, 13);printf("...");
 }
+//é sério, tem nada pra olhar n
 void desenhaPernas() {
     gotoxy(60, 14);       printf(YEL"        ...."RESET);
     gotoxy(60, 15);       printf(YEL"       ......"RESET);
@@ -94,7 +94,7 @@ void desenhaPessoaErrada(){
     desenhaBracoDireito();
     desenhaPernas();
 }
-void desenhaParabens() {
+void desenhaParabens(char *palavraSecreta) {
 
     gotoxy(4, 5); printf("  _____                           _                            _   _ ");
     gotoxy(4, 6); printf(" |  __ \\                         | |                          | | | |");
@@ -103,12 +103,15 @@ void desenhaParabens() {
     gotoxy(4, 9); printf(" | |      | (_| | | |    | (_| | | |_) | |  __/ | | | | \\__ \\ |_| |_|");
     gotoxy(4, 10); printf(" |_|       \\__,_| |_|     \\__,_| |_.__/   \\___| |_| |_| |___/ (_) (_)");
 
+    gotoxy(12, 23);
+    printf("A palavra secreta era: %s", palavraSecreta);
+
     gotoxy(4, 12);
     system("pause");
     system("cls");
 
 }
-void desenhaPerdeu() {
+void desenhaPerdeu(char *palavraSecreta) {
     gotoxy(4, 5); printf("  _____                      _                  _   _ ");
     gotoxy(4, 6); printf(" |  __ \\                    | |                | | | |");
     gotoxy(4, 7); printf(" | |__) |   ___   _ __    __| |   ___   _   _  | | | |");
@@ -117,6 +120,9 @@ void desenhaPerdeu() {
     gotoxy(4, 10); printf(" |_|       \\___| |_|     \\__,_|  \\___|  \\__,_| (_) (_)");
 
     desenhaPessoaErrada();
+
+    gotoxy(12, 23);
+    printf("A palavra secreta era: %s", palavraSecreta);
 
     gotoxy(4, 12);
     system("pause");
@@ -130,4 +136,5 @@ void desenhaPessoa(){
     desenhaBracoDireito();
     desenhaPernas();
 }
+//Merece um premio por ter chegado aqui, mas realmente n tinha nada
 #endif //MAIN_C_DESENHABONECO_H

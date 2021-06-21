@@ -12,14 +12,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29e194b5-f10c-4e41-b2bc-15209a1d178c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/jogo_da_forca.dir/C.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/jogo_da_forca.dir/C.includecache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/jogo_da_forca.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/jogo_da_forca.dir/main.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/jogo_da_forca.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/jogo_da_forca.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/jogo_da_forca.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/jogo_da_forca.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/desenhaboneco.h" beforeDir="false" afterPath="$PROJECT_DIR$/desenhaboneco.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/listase.h" beforeDir="false" afterPath="$PROJECT_DIR$/listase.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/marco.h" beforeDir="false" afterPath="$PROJECT_DIR$/marco.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +101,15 @@
       <workItem from="1623457080070" duration="1398000" />
       <workItem from="1623459752898" duration="3846000" />
       <workItem from="1623465515550" duration="21000" />
-      <workItem from="1623465827144" duration="494000" />
+      <workItem from="1623465827144" duration="762000" />
+      <workItem from="1623467172133" duration="35000" />
+      <workItem from="1623532875132" duration="1216000" />
+      <workItem from="1623676814985" duration="171000" />
+      <workItem from="1623711224843" duration="394000" />
+      <workItem from="1624154245438" duration="2588000" />
+      <workItem from="1624157080026" duration="1368000" />
+      <workItem from="1624216449702" duration="6857000" />
+      <workItem from="1624228390074" duration="628000" />
     </task>
     <servers />
   </component>
